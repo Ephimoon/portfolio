@@ -33,7 +33,7 @@ const Nav = () => {
             <div className="md:flex md:items-center md:justify-between md:py-1">
                 {/* logo + hamburger */}
                 <div className="flex items-center justify-between">
-                    <a href="#hero" className="flex items-center space-x-2">
+                    <a href="#hero" onClick={handleNavClick} className="flex items-center space-x-2">
                         <span className="text-xl font-semibold text-second font-mono whitespace-nowrap">
                         Melanie Escobar
                         </span>
