@@ -23,7 +23,7 @@ const Footer = () => {
                                 href={x.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="relative inline-block group p-1"
+                                className="relative inline-block group p-1 hover:text-third hover:-translate-y-1 transition duration-200"
                                 >
                                 {x.title}
                             </a>
