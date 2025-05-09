@@ -10,7 +10,7 @@ const Footer = () => {
 
     return (
         <nav className="bg-first w-full">
-        <div className="max-w-screen-xl mx-auto p-4">
+        <div className="max-w-screen-xl mx-auto">
             <div className="md:flex md:items-center md:justify-between md:py-1">
 
                 <h2 className='p-2 text-second font-gaegu'>thank you for stopping by /ᐠ｡ꞈ｡ᐟ✿\</h2>
