@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
     const footerBarItems = [
-        { title: 'resume', url: "/cert.pdf" },
+        { title: 'resume', url: "/melanie_escobar_marulanda_resume.pdf" },
         { title: 'github', url: "https://github.com/Ephimoon" },
         { title: 'linkedIn', url: "https://www.linkedin.com/in/melanie-escobar-marulanda" }
       ];

@@ -100,7 +100,7 @@ const Nav = () => {
                     })}
 
                     <a
-                        href="/cert.pdf"
+                        href="/melanie_escobar_marulanda_resume.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-second px-4 py-2 font-medium text-white transition hover:bg-third m-4 md:m-0"
