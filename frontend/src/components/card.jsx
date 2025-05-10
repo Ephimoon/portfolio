@@ -42,7 +42,7 @@ const Card = ({ name, image, description, technologies, link, github, shouldRese
                         <h3 className="text-center font-semibold text-lg text-black">{name}</h3>
                         <div className="flex justify-center items-center gap-3 mt-2 mb-4">
                             {technologies.map((tech, i) => (
-                            <img key={i} src={tech.tech_image} alt={tech.tech_name} className="h-6" />
+                                <img key={i} src={tech.tech_image} alt={tech.tech_name} className="h-6" />
                             ))}
                         </div>
                         <p className="text-xs text-gray-700 leading-relaxed">{description}</p>

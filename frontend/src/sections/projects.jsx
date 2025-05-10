@@ -21,40 +21,49 @@ const Projects = () => {
 
     const projects = [
         {
-            name: "Volunteer Dashboard",
+            name: "Spara AI – Capstone Project",
             image: "/metuki.png",
-            description: "Admin dashboard for managing volunteers and events for Shasta's Coogmunity.Admin dashboard for managing volunteers and events for Shasta's Coogmunity.Admin dashboard for managing volunteers and events for Shasta's Coogmunity.Admin dashboard for managing volunteers and events for Shasta's Coogmunity.",
+            description: "Developed a full-stack AI chatbot with OpenAI and Gemini integration via LangChain, featuring smart video responses based on the conversation.",
             technologies: [
-                { tech_name: "MySQL", tech_image: "/mysql.svg" },
-                { tech_name: "Express", tech_image: "/express.svg" },
-                { tech_name: "React", tech_image: "/react.svg" },
-                { tech_name: "Node.js", tech_image: "/node.svg" }
-            ],
-            link: "https://coogmunity.org/dashboard",
-            github: "https://github.com/Ephimoon/coogmunity"
-        },
-        {
-            name: "Music Visualizer",
-            image: "/music-viz.png",
-            description: "A live music visualizer using Web Audio API and Canvas animations.",
-            technologies: [
-                { tech_name: "JavaScript", tech_image: "/js.svg" },
-                { tech_name: "Canvas", tech_image: "/canvas.svg" }
-            ],
-            link: null,
-            github: "https://github.com/Ephimoon/music-visualizer"
-        },
-        {
-            name: "Spara AI Chatbot",
-            image: "/spara-thumb.png",
-            description: "A full-stack AI chatbot using Gemini, Supabase, and FastAPI for sales lead generation. A full-stack AI chatbot using Gemini, Supabase, and FastAPI for sales lead generation. A full-stack AI chatbot using Gemini, Supabase, and FastAPI for sales lead generation. A full-stack AI chatbot using Gemini, Supabase, and FastAPI for sales lead generation.",
-            technologies: [
-                { tech_name: "React", tech_image: "/react.svg" },
-                { tech_name: "Vite", tech_image: "/vite.svg" },
-                { tech_name: "FastAPI", tech_image: "/fastapi.svg" }
+                { tech_name: "Python", tech_image: "./python.svg" },
+                { tech_name: "FastAPI", tech_image: "./fastapi.svg" },
+                { tech_name: "React", tech_image: "./react.svg" },
+                { tech_name: "TypeScript", tech_image: "./typescript.svg" },
+                { tech_name: "Tailwind CSS", tech_image: "./tailwindcss.svg" },
+                { tech_name: "LangChain", tech_image: "./langchain.svg" },
+                { tech_name: "OpenAI", tech_image: "./openai.svg" },
+                { tech_name: "Gemini", tech_image: "./gemini.svg" },
+                { tech_name: "Supabase", tech_image: "./supabase.svg" },
+                { tech_name: "Docker", tech_image: "./docker.svg" }
             ],
             link: null,
             github: null
+        },
+        {
+            name: "The Museum of Fine Arts, Houston - Full-Stack Management System",
+            image: "/metuki.png",
+            description: "Built a management system for museum operations, supporting exhibitions, tickets, artwork, and memberships with image uploads, reports, and Azure integration.",
+            technologies: [
+                { tech_name: "React", tech_image: "./react.svg" },
+                { tech_name: "Express.js", tech_image: "./express.svg" },
+                { tech_name: "MySQL", tech_image: "./mysql.svg" },
+                { tech_name: "Node.js", tech_image: "./nodejs.svg" }
+            ],
+            link: "https://black-desert-0587dbd10.5.azurestaticapps.net/",
+            github: "https://github.com/Ephimoon/MuseumDB"
+        },
+        {
+            name: "Shasta’s Coogmunity Service - Full-Stack Volunteer Management System",
+            image: "/metuki.png",
+            description: "Led development of a volunteer matching platform with role-based dashboards, authentication, and event matching based on profile data. Includes CSV/PDF reports and Azure image uploads.",
+            technologies: [
+                { tech_name: "React", tech_image: "./react.svg" },
+                { tech_name: "Node.js", tech_image: "./nodejs.svg" },
+                { tech_name: "Express", tech_image: "./express.svg" },
+                { tech_name: "MongoDB", tech_image: "./mongodb.svg" }
+            ],
+            link: null,
+            github: "https://github.com/Ephimoon/volunteer-fullstack"
         }
     ]
       
