@@ -78,7 +78,7 @@ const AboutMe = () => {
 
                         {/* buttons */}
                         <div className="flex gap-4 mt-4">
-                            <a href="/cert.pdf" className="flex items-center justify-center px-3 py-2 text-sm font-medium bg-[#FEECF0] border-2 border-third text-third rounded-xl hover:bg-third hover:text-white transition-transform duration-200 hover:scale-105">
+                            <a href="/cert.pdf" className="flex items-center justify-center px-3 py-2 text-sm font-medium bg-accent border-2 border-third text-third rounded-xl hover:bg-third hover:text-white transition-transform duration-200 hover:scale-105">
                                 resume
                             </a>
 
