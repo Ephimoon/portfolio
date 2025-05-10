@@ -22,8 +22,18 @@ const Projects = () => {
     const projects = [
         {
             name: "Spara AI – Capstone Project",
-            image: "/metuki.png",
-            description: "Developed a full-stack AI chatbot with OpenAI and Gemini integration via LangChain, featuring smart video responses based on the conversation.",
+            image: "/spara.png",
+            description: `For my capstone project, I worked with a team of 7 to build an AI-powered chatbot for a real-world client.  
+
+The chatbot helps businesses respond to potential buyers using advanced language models (OpenAI and Gemini), which can be switched on the fly through an admin panel we built.  
+
+On the backend, we made sure the AI could understand incoming messages, identify the most relevant product, and respond with a personalized video.  
+
+On the frontend, we built a responsive chat interface using React and Tailwind CSS. It supports real-time messaging, video playback, smart chat titles, and includes an admin tool for selecting the AI model.  
+
+To ensure reliability, we wrote tests for both the frontend and backend, and automated the testing and deployment process with Jenkins.  
+
+This project gave me hands-on experience working with AI APIs.`,
             technologies: [
                 { tech_name: "Python", tech_image: "./python.svg" },
                 { tech_name: "FastAPI", tech_image: "./fastapi.svg" },
@@ -41,8 +51,19 @@ const Projects = () => {
         },
         {
             name: "The Museum of Fine Arts, Houston - Full-Stack Management System",
-            image: "/metuki.png",
-            description: "Built a management system for museum operations, supporting exhibitions, tickets, artwork, and memberships with image uploads, reports, and Azure integration.",
+            image: "/museum.png",
+            description: `I worked with a team of 5 to build a full-stack management system for the Museum of Fine Arts in Houston.  
+
+The platform helps staff manage collections, exhibitions, events, ticket sales, gift shop items, and memberships all in one place.  
+
+My main focus was building features to create, edit, and display artworks and exhibitions. This included image uploads with previews and integration with Azure Blob Storage for secure hosting.  
+
+I also developed a ticket sales reporting page that lets staff download PDF summaries using jsPDF.  
+
+We added user authentication and database triggers to keep the data consistent and secure.  
+
+This project gave me experience building real-world tools that make daily operations more efficient.`
+,
             technologies: [
                 { tech_name: "React", tech_image: "./react.svg" },
                 { tech_name: "Express.js", tech_image: "./express.svg" },
@@ -54,8 +75,17 @@ const Projects = () => {
         },
         {
             name: "Shasta’s Coogmunity Service - Full-Stack Volunteer Management System",
-            image: "/metuki.png",
-            description: "Led development of a volunteer matching platform with role-based dashboards, authentication, and event matching based on profile data. Includes CSV/PDF reports and Azure image uploads.",
+            image: "/shasta.png",
+            description: `I led a team of 4 to create a platform that connects volunteers with events based on their availability, location, and skills.  
+
+We built two dashboards—one for volunteers to manage their profiles and one for admins to create events and match volunteers automatically.  
+
+The system uses secure login with role-based access, and includes features like dynamic forms, modals, and image uploads using Azure Blob Storage.  
+
+We also built reporting tools that let admins download data as PDFs or CSVs using pdfkit and json2csv.  
+
+This project helped me grow as both a developer and a team lead.`
+,
             technologies: [
                 { tech_name: "React", tech_image: "./react.svg" },
                 { tech_name: "Node.js", tech_image: "./nodejs.svg" },
