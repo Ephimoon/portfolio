@@ -84,32 +84,34 @@ const Hero = () => {
                 </div>
                 
                 {/* Top spacer to push below navbar */}
-                <div className="h-9" />
+                {/* <div className="h-9" /> */}
 
                 {/* main content */}
-                <div className='p-4 py-10'>
-                    <h2 className="text-xl sm:text-2xl text-second mb-2 font-semibold sm:pb-2">Hello,</h2>
-                    <h3 className="text-xl sm:text-2xl text-second mb-4 font-semibold sm:pb-3">My Name is</h3>
-                    <h1 className="w-full text-left font-extrabold text-second tracking-wide sm:mb-6 text-4xl sm:text-6xl md:text-7xl lg:text-[5.9vw] xl:text-[76px] lg:whitespace-nowrap">MELANIE ESCOBAR MARULANDA</h1>
-                </div>
-
-                {/* scrolling text */}
-                <div className="md:w-full md:overflow-x-hidden bg-first rounded-2xl md:rounded-none xl:rounded-2xl text-second font-medium p-4 mx-4 md:mx-0">
-                    <p 
-                        className="sm:text-lg md:text-3xl md:inline-block md:whitespace-nowrap md:animate-scroll-left"
-                        onMouseEnter={(e) => (e.currentTarget.style.animationPlayState = "paused")}
-                        onMouseLeave={(e) => (e.currentTarget.style.animationPlayState = "running")}>
-                        <ScrollingMessage val={0} />
-                        <ScrollingMessage val={1} />
-                    </p>
-                </div>
-                
-                {/* bouncing down arrow fixed to bottom */}
-                {showArrow && (
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce">
-                        <a href="#aboutme" className="text-second text-6xl">↓</a>
+                <div className='pt-9 md:pt-0'>
+                    <div className='p-4 py-10'>
+                        <h2 className="text-xl sm:text-2xl text-second mb-2 font-semibold sm:pb-2">Hello,</h2>
+                        <h3 className="text-xl sm:text-2xl text-second mb-4 font-semibold sm:pb-3">My Name is</h3>
+                        <h1 className="w-full text-left font-extrabold text-second tracking-wide sm:mb-6 text-4xl sm:text-6xl md:text-7xl lg:text-[5.9vw] xl:text-[76px] lg:whitespace-nowrap">MELANIE ESCOBAR MARULANDA</h1>
                     </div>
-                )}
+
+                    {/* scrolling text */}
+                    <div className="md:w-full md:overflow-x-hidden bg-first rounded-2xl md:rounded-none xl:rounded-2xl text-second font-medium p-4 mx-4 md:mx-0">
+                        <p 
+                            className="sm:text-lg md:text-3xl md:inline-block md:whitespace-nowrap md:animate-scroll-left"
+                            onMouseEnter={(e) => (e.currentTarget.style.animationPlayState = "paused")}
+                            onMouseLeave={(e) => (e.currentTarget.style.animationPlayState = "running")}>
+                            <ScrollingMessage val={0} />
+                            <ScrollingMessage val={1} />
+                        </p>
+                    </div>
+                    
+                    {/* bouncing down arrow fixed to bottom */}
+                    {showArrow && (
+                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce">
+                            <a href="#aboutme" className="text-second text-6xl">↓</a>
+                        </div>
+                    )}
+                </div>
             </div>
 
         </section>
