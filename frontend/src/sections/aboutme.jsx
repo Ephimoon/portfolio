@@ -55,13 +55,12 @@ const AboutMe = () => {
                     className='flex flex-col md:flex-row'
                     >
 
+                    {/* Top spacer to push below navbar */}
+                    <div className="h-15" />
+
                     {/* picture */}
-                    <div className="md:w-1/3 flex items-center justify-center">
-                        <div className="relative flex flex-col items-center justify-center">
-                            <div className="absolute w-1/3 md:w-2/3 h-full bg-first rounded-2xl rotate-[30deg] bottom-2.5 md:bottom-1 z-1"></div>
-                            <img src="/metuki.png" alt="Melanie Escobar Marulanda" className="z-20 w-1/3 md:w-2/3 rounded-2xl shadow-lg" />
-                            <p className="text-xs text-third italic mt-2 z-20">Tuki 🐾</p>
-                        </div>
+                    <div className="flex items-center justify-center w-full md:w-1/3 p-4">
+                        <img src="/metuki.png" alt="Melanie Escobar Marulanda" className="max-h-[15vh] sm:max-h-[25vh] md:max-h-[45vh] lg:max-h-[60vh] w-auto h-auto object-contain rounded-2xl shadow-lg" />
                     </div>
 
                     {/* text */}
