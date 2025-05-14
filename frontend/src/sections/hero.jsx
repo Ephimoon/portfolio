@@ -53,7 +53,7 @@ const Hero = () => {
     }, [])
 
     return (
-        <section id="hero" className="relative min-h-screen snap-start w-full flex items-center">
+        <section id="hero" className="relative min-h-[100svh] min-h-screen snap-start w-full flex items-center">
 
             <div className="max-w-screen-xl mx-auto w-full hero-content" ref={contentRef}>
                 {/* animated background */}
