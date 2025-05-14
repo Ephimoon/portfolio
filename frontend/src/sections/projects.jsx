@@ -101,7 +101,7 @@ This project helped me grow as both a developer and a team lead.`
     return (
         <section ref={sectionRef} id="projects" className="relative min-h-screen snap-start w-full bg-first flex flex-col">
             {/* Top spacer to push below navbar */}
-            <div className="h-7" />
+            <div className="h-12" />
 
             {/* Main content centered vertically */}
             <div className="flex-1 flex items-center justify-center">

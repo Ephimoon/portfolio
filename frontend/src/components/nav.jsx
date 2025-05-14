@@ -28,7 +28,7 @@ const Nav = () => {
     };
 
     return (
-        <nav className="bg-first fixed w-full z-20 top-0">
+        <nav className="bg-first fixed w-full z-50 top-0">
         <div className="max-w-screen-xl mx-auto p-4">
             <div className="md:flex md:items-center md:justify-between md:py-1">
                 {/* logo + hamburger */}
