@@ -87,8 +87,8 @@ const Hero = () => {
                 {/* <div className="h-9" /> */}
 
                 {/* main content */}
-                <div className='pt-9 md:pt-0'>
-                    <div className='p-4 py-10'>
+                <div className='pt-17 md:pt-0'>
+                    <div className='px-4 pb-10'>
                         <h2 className="text-xl sm:text-2xl text-second mb-2 font-semibold sm:pb-2">Hello,</h2>
                         <h3 className="text-xl sm:text-2xl text-second mb-4 font-semibold sm:pb-3">My Name is</h3>
                         <h1 className="w-full text-left font-extrabold text-second tracking-wide sm:mb-6 text-4xl sm:text-6xl md:text-7xl lg:text-[5.9vw] xl:text-[76px] lg:whitespace-nowrap">MELANIE ESCOBAR MARULANDA</h1>
