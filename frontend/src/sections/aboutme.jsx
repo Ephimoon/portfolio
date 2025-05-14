@@ -45,7 +45,7 @@ const AboutMe = () => {
     }
 
     return (
-        <section id="aboutme" className="relative min-h-screen snap-start w-full bg-white flex items-center">
+        <section id="aboutme" className="relative snap-start w-full bg-white flex items-center" style={{ minHeight: 'calc(var(--vh, 1vh) * 100)' }}>
             <div className="max-w-screen-xl mx-auto w-full">
                 <motion.div
                     ref={ref}

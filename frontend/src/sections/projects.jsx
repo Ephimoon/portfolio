@@ -99,7 +99,7 @@ This project helped me grow as both a developer and a team lead.`
       
 
     return (
-        <section ref={sectionRef} id="projects" className="relative min-h-screen snap-start w-full bg-first flex flex-col">
+        <section ref={sectionRef} id="projects" className="relative snap-start w-full bg-first flex flex-col" style={{ minHeight: 'calc(var(--vh, 1vh) * 100)' }}>
             {/* Top spacer to push below navbar */}
             <div className="h-12" />
 

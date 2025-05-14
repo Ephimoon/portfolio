@@ -34,7 +34,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative min-h-screen snap-start w-full bg-white flex flex-col">
+    <section id="contact" className="relative snap-start w-full bg-white flex flex-col" style={{ minHeight: 'calc(var(--vh, 1vh) * 100)' }}>
       <div className="h-16" />
       <div className="flex-1 flex items-center justify-center">
         <div className="max-w-xl w-full px-6 sm:px-10 py-12">
