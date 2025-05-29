@@ -22,7 +22,7 @@ const Projects = () => {
     const projects = [
         {
             name: "Spara AI – Capstone Project",
-            image: "/spara.png",
+            image: "/spara1.png",
             description: `For my capstone project, I worked with a team of 7 to build an AI-powered chatbot for a real-world client.  
 
 The chatbot helps businesses respond to potential buyers using advanced language models (OpenAI and Gemini), which can be switched on the fly through an admin panel we built.  
@@ -51,7 +51,7 @@ This project gave me hands-on experience working with AI APIs.`,
         },
         {
             name: "The Museum of Fine Arts, Houston - Full-Stack Management System",
-            image: "/museum.png",
+            image: "/museum1.png",
             description: `I worked with a team of 5 to build a full-stack management system for the Museum of Fine Arts in Houston.  
 
 The platform helps staff manage collections, exhibitions, events, ticket sales, gift shop items, and memberships all in one place.  
@@ -75,7 +75,7 @@ This project gave me experience building real-world tools that make daily operat
         },
         {
             name: "Shasta’s Coogmunity Service - Full-Stack Volunteer Management System",
-            image: "/shasta.png",
+            image: "/shasta1.png",
             description: `I led a team of 4 to create a platform that connects volunteers with events based on their availability, location, and skills.  
 
 We built two dashboards—one for volunteers to manage their profiles and one for admins to create events and match volunteers automatically.  
