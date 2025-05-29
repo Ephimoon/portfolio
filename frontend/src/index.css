@@ -22,6 +22,17 @@
     }
   }
 
+  --animate-scroll-left-stack: scroll-left 10s linear infinite;
+
+  @keyframes scroll-left-stack {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
 }
 
 @layer utilities {
