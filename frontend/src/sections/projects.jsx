@@ -88,12 +88,12 @@ const Projects = () => {
       
 
     return (
-        <section id="projects" className="relative snap-start w-full bg-first flex flex-col" style={{ minHeight: 'calc(var(--vh, 1vh) * 100)' }}>
-        <div className="h-12 md:h-0" />
+        <section id="projects" className="relative md:snap-start w-full bg-first flex flex-col" style={{ minHeight: 'calc(var(--vh, 1vh) * 100)' }}>
+        {/* <div className="h-12 md:h-0" /> */}
         <div className="flex-1 flex items-center justify-center">
             <div className="max-w-screen-2xl w-full p-10 md:p-15 lg:p-20">
                 <div className='flex flex-col gap-12 md:mt-[-3rem]'>
-                    <h2 className="text-3xl md:text-5xl text-second mb-4 font-semibold pb-3 font-gaegu text-center">
+                    <h2 className="text-[7vw] md:text-5xl text-second mb-[-2rem] md:mb-0rem md:mb-4 font-semibold font-gaegu text-center whitespace-nowrap">
                         Things I’ve worked on ..
                     </h2>
 

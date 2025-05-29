@@ -53,7 +53,7 @@ const Hero = () => {
     }, [])
 
     return (
-        <section id="hero" className="relative snap-start w-full flex items-center" style={{ minHeight: 'calc(var(--vh, 1vh) * 100)' }}>
+        <section id="hero" className="relative md:snap-start w-full flex items-center" style={{ minHeight: 'calc(var(--vh, 1vh) * 100)' }}>
 
             <div className="max-w-screen-xl mx-auto w-full hero-content" ref={contentRef}>
                 {/* animated background */}
@@ -82,9 +82,6 @@ const Hero = () => {
                         )
                     })}
                 </div>
-                
-                {/* Top spacer to push below navbar */}
-                {/* <div className="h-9" /> */}
 
                 {/* main content */}
                 <div className='pt-17 md:pt-0'>

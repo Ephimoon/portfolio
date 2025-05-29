@@ -15,7 +15,7 @@ const CardModal = ({ project, onClose }) => {
                             <img
                                 src={tech.tech_image}
                                 alt={tech.tech_name}
-                                className="h-8"
+                                className="h-6 md:h-8"
                             />
                             <div className="absolute top-10 left-1/2 -translate-x-1/2 bg-third text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-10">
                                 {tech.tech_name}

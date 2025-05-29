@@ -45,7 +45,7 @@ const AboutMe = () => {
     }
 
     return (
-        <section id="aboutme" className="relative snap-start w-full bg-white flex items-center" style={{ minHeight: 'calc(var(--vh, 1vh) * 100)' }}>
+        <section id="aboutme" className="relative md:snap-start w-full bg-white flex items-center" style={{ minHeight: 'calc(var(--vh, 1vh) * 100)' }}>
             <div className="max-w-screen-xl mx-auto w-full">
                 <motion.div
                     ref={ref}
@@ -56,7 +56,7 @@ const AboutMe = () => {
                     >
 
                     {/* Top spacer to push below navbar */}
-                    <div className="h-15" />
+                    {/* <div className="h-15" /> */}
 
                     {/* picture */}
                     <div className="flex items-center justify-center w-full md:w-1/3 p-4">

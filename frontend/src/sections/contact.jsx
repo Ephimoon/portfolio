@@ -34,8 +34,8 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative snap-start w-full bg-white flex flex-col" style={{ minHeight: 'calc(var(--vh, 1vh) * 100)' }}>
-      <div className="h-16" />
+    <section id="contact" className="relative md:snap-start w-full bg-white flex flex-col" style={{ minHeight: 'calc(var(--vh, 1vh) * 100)' }}>
+      {/* <div className="h-16" /> */}
       <div className="flex-1 flex items-center justify-center">
         <div className="max-w-xl w-full px-6 sm:px-10 py-12">
           <h2 className="text-3xl md:text-5xl text-second font-semibold pb-6 font-gaegu text-center">
