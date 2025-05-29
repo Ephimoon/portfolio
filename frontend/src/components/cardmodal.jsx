@@ -7,18 +7,17 @@ const CardModal = ({ project, onClose }) => {
         <div className="fixed inset-0 z-50 bg-second/30 flex items-center justify-center" onClick={onClose}>
         <div className="relative bg-white w-full max-w-3xl max-h-[100vh] md:max-h-[90vh] md:rounded-3xl shadow-lg flex flex-col overflow-hidden" onClick={(e) => e.stopPropagation()}>
             {/* Title + Stack */}
-            <div className="sticky top-0 bg-white p-4 pt-12 z-10 flex flex-col items-center text-center">
+            <div className="sticky top-0 bg-white p-4 pt-6 md:pt-12 z-10 flex flex-col items-center text-center">
                 <h2 className="text-xl font-bold font-mono text-second pb-2">{project.name}</h2>
-                <div className="flex gap-4 mt-2 flex-wrap justify-center">
+                <div className="flex gap-4 mt-2 overflow-x-auto px-2 scrollbar-thin scrollbar-thumb-gray-300">
                     {project.technologies.map((tech, i) => (
                         <div key={i} className="relative group">
-                            <img
-                                src={tech.tech_image}
-                                alt={tech.tech_name}
-                                className="h-6 md:h-8"
-                            />
-                            <div className="absolute top-10 left-1/2 -translate-x-1/2 bg-third text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-10">
-                                {tech.tech_name}
+                            <div className="flex flex-col items-center text-center">
+                                <img src={tech.tech_image} alt={tech.tech_name} className="h-6 md:h-8" />
+                                <span className="text-[10px] mt-1 block sm:hidden">{tech.tech_name}</span>
+                                <div className="absolute top-10 left-1/2 -translate-x-1/2 bg-third text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-10 hidden sm:block">
+                                    {tech.tech_name}
+                                </div>
                             </div>
                         </div>
                     ))}
