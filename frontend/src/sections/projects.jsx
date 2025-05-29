@@ -55,8 +55,8 @@ const Projects = () => {
             technologies: [
                 { tech_name: "React", tech_image: "./react.svg" },
                 { tech_name: "Express.js", tech_image: "./express.svg" },
-                { tech_name: "MySQL", tech_image: "./mysql.svg" },
-                { tech_name: "Node.js", tech_image: "./nodejs.svg" }
+                { tech_name: "Node.js", tech_image: "./nodejs.svg" },
+                { tech_name: "MySQL", tech_image: "./mysql.svg" }
             ],
             link: null,
             github: "https://github.com/Ephimoon/MuseumDB"
@@ -76,10 +76,10 @@ const Projects = () => {
                 
                 This project helped me grow as a full-stack developer by giving me hands-on experience with both frontend and backend development.`,
             technologies: [
-                { tech_name: "React", tech_image: "./react.svg" },
-                { tech_name: "Node.js", tech_image: "./nodejs.svg" },
+                { tech_name: "MongoDB", tech_image: "./mongodb.svg" },
                 { tech_name: "Express", tech_image: "./express.svg" },
-                { tech_name: "MongoDB", tech_image: "./mongodb.svg" }
+                { tech_name: "React", tech_image: "./react.svg" },
+                { tech_name: "Node.js", tech_image: "./nodejs.svg" }
             ],
             link: null,
             github: "https://github.com/Ephimoon/volunteer-fullstack"
