@@ -14,7 +14,7 @@ const techList = shouldScroll
             <div className="relative bg-white w-full max-w-3xl max-h-[100vh] md:max-h-[90vh] md:rounded-3xl shadow-lg flex flex-col overflow-hidden" onClick={(e) => e.stopPropagation()}>
                 {/* Title + Stack */}
                 <div className="sticky top-0 bg-white p-4 pt-6 md:pt-12 z-10 flex flex-col items-center text-center">
-                    <h2 className="text-xl font-bold font-mono text-second pb-2">{project.name}</h2>
+                    <h2 className="text-xl font-bold font-mono text-second pb-2 px-4">{project.name}</h2>
 
                     <div className="w-full mt-2 px-2 overflow-hidden sm:overflow-visible">
                         <div className={`flex gap-4 whitespace-nowrap ${shouldScroll ? 'w-max animate-scroll-left-stack' : 'w-full justify-center flex-wrap sm:whitespace-normal sm:animate-none'}`}>
