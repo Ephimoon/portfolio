@@ -60,7 +60,7 @@ const AboutMe = () => {
 
                     {/* picture */}
                     <div className="flex items-center justify-center w-full md:w-1/3 p-4">
-                        <img src="/linkedinphoto.JPEG" alt="Melanie Escobar Marulanda" className="max-h-[20vh] sm:max-h-[30vh] lg:max-h-[60vh] w-auto h-auto object-contain rounded-2xl shadow-lg" />
+                        <img src="/linkedinphoto.JPEG" alt="Melanie Escobar Marulanda" className="max-h-[25vh] sm:max-h-[30vh] lg:max-h-[60vh] w-auto h-auto object-contain rounded-2xl shadow-lg" />
                     </div>
 
                     {/* text */}
