@@ -8,7 +8,82 @@ const Projects = () => {
     const openModal = (project) => setSelectedProject(project)
     const closeModal = () => setSelectedProject(null)
 
-    const projects = [
+        const current_projects = [
+        {
+            name: "FoodLens",
+            image: "/f3.png",
+            moreimages: ["/fllogo.png", "/f1.png", "/f2.png", "/f3.png", "/f4.png", "/f5.png", "/flwireframe.png", "/flprototype.png"],
+            description: 
+                `FoodLens is a SwiftUI-based iOS app focused on helping users log their meals and visualize their daily nutrition.
+
+                I designed and developed the entire frontend from scratch using SwiftUI and figma, emphasizing responsive layouts, reusable components, and a consistent color palette. The app currently includes a custom LaunchView, personalized HomeView with user greetings, and multiple tab-based pages with smooth transitions.
+
+                Each view follows a modern, minimalist style, rounded cards, and soft shadows to create a friendly and polished user experience. The layout dynamically adapts to different screen sizes, ensuring full responsiveness across iPhone models.
+
+                While this beta version focuses on frontend design, I plan to integrate Core Data and machine learning–based food recognition features in the next phase.
+
+                This project has currently helped me strengthen my understanding of SwiftUI view composition, state management, and Apple’s Human Interface Guidelines for app design.`,
+            technologies: [
+                { tech_name: "Swift", tech_image: "./swift.png" },
+                { tech_name: "SwiftUI", tech_image: "./swiftui.svg" },
+                { tech_name: "Xcode", tech_image: "./xcode.svg" },
+                { tech_name: "Figma", tech_image: "./figma.png" }
+            ],
+            link: null,
+            github: "https://github.com/Ephimoon/COSC_4355_Project"
+        },
+        {
+            name: "IEEE-NSM Website",
+            image: "/ieeensm1.jpeg",
+            moreimages: ["/ieeensm2.png", "/ieeensm3.jpeg", "/ieeensm4.jpeg", "/ieeensm5.png", "/ieeensm6.png"],
+            description: 
+                `I led a team to design and develop the official website for IEEE-NSM at the University of Houston — a student organization that connects STEM majors through coding competitions, workshops, and networking events.
+
+                The site dynamically displays upcoming events, officer information, and announcements using Google Sheets and Google Calendar integrations. I implemented a custom Google Apps Script backend to automatically sync new event data, allowing officers to update schedules without modifying the codebase.
+
+                The frontend, built with React and CSS, focuses on clean, accessible UI design with the organization’s signature blue and and green color palette. It includes reusable components for event cards, modals, and social media embeds.
+
+                Hosting is handled through Vercel, ensuring seamless deployment and version control via GitHub. 
+                
+                This project strengthened my skills in API integration, frontend automation, and user-centric web design while building a tool that benefits hundreds of UH students each semester.`,
+            technologies: [
+                { tech_name: "React", tech_image: "./react.svg" },
+                { tech_name: "Google Apps Script", tech_image: "./gas.svg" },
+                { tech_name: "Google Calendar", tech_image: "./gc.svg" },
+                { tech_name: "Google Sheets", tech_image: "./gs.svg" },
+                { tech_name: "Vercel", tech_image: "./vercel.svg" }
+            ],
+            link: "https://www.ieee-nsm.com/",
+            github: "https://github.com/Ephimoon/Ieee-nsm"
+        },
+        {
+            name: "Drug Consumption Analysis – Machine Learning & Data Science",
+            image: "",
+            moreimages: [""],
+            description: 
+                `This dual-course project (MATH 4322 & MATH 4323) investigates how personality traits and demographics influence substance use behaviors using the Drug Consumption Dataset from the UC Irvine Machine Learning Repository and Kaggle.
+
+                The dataset contains 1,885 participant records with 12 demographic and personality trait variables (e.g., age, gender, education, neuroticism, extraversion) and 19 drug use outcomes. Our goal is to classify participants as users or non-users of a selected drug (e.g., Cannabis) and determine which features most strongly influence predictions.
+
+                In MATH 4323, our team is focusing on supervised learning using K-Nearest Neighbors (KNN) and Support Vector Machines (SVM) to compare their performance in classifying drug use behavior. We are currently completing data preprocessing, feature encoding, and cross-validation analysis to evaluate accuracy, sensitivity, and specificity.
+
+                In MATH 4322, we are implementing and comparing Random Forest and Neural Network models to handle nonlinear patterns and complex relationships in the same dataset. My role involves building and tuning the Neural Network model and contributing to data exploration, cleaning, and visualization.
+
+                This ongoing project strengthens my understanding of supervised learning, model evaluation, and data preprocessing techniques while applying statistical and machine learning methods to real-world behavioral data.`,
+            technologies: [
+                { tech_name: "Python", tech_image: "./python.svg" },
+                { tech_name: "Pandas", tech_image: "./pandas.svg" },
+                { tech_name: "NumPy", tech_image: "./numpy.svg" },
+                { tech_name: "Scikit-Learn", tech_image: "./scikitlearn.svg" },
+                { tech_name: "TensorFlow", tech_image: "./tensorflow.svg" },
+                { tech_name: "Matplotlib", tech_image: "./matplotlib.png" }
+            ],
+            link: null,
+            github: null
+        }
+    ]
+
+    const past_projects = [
         {
             name: "Spara AI – Capstone Project",
             image: "/spara1.png",
@@ -91,14 +166,33 @@ const Projects = () => {
         <section id="projects" className="relative md:snap-start w-full bg-first flex flex-col" style={{ minHeight: 'calc(var(--vh, 1vh) * 100)' }}>
         {/* <div className="h-12 md:h-0" /> */}
         <div className="flex-1 flex items-center justify-center">
-            <div className="max-w-screen-2xl w-full p-10 md:p-15 lg:p-20">
-                <div className='flex flex-col gap-12 md:mt-[-3rem]'>
-                    <h2 className="text-[7vw] md:text-5xl text-second mb-[-2rem] md:mb-0rem md:mb-4 font-semibold font-gaegu text-center whitespace-nowrap">
-                        Things I’ve worked on ..
+            <div className="max-w-screen-2xl w-full p-10 md:p-18 lg:p-30">
+                <div className='flex flex-col gap-12 md:mt-[-1rem]'>
+                    <h2 className="text-[7vw] md:text-5xl text-second mb-[-1rem] md:mb-0rem md:mb-2 font-semibold font-gaegu text-center whitespace-nowrap">
+                        Projects
                     </h2>
 
+                    <h3 className="text-[5vw] md:text-4xl text-second mb-[-1rem] md:mb-0rem font-semibold font-gaegu text-center whitespace-nowrap">
+                        Currently working on ..
+                    </h3>
+
                     <div className="grid grid-rows-1 md:grid-cols-3 gap-8">
-                        {projects.map((project, index) => (
+                        {current_projects.map((project, index) => (
+                        <Card
+                            key={index}
+                            image={project.image}
+                            name={project.name}
+                            onClick={() => openModal(project)}
+                        />
+                        ))}
+                    </div>
+
+                    <h3 className="text-[5vw] md:text-4xl text-second mb-[-1rem] md:mb-0rem font-semibold font-gaegu text-center whitespace-nowrap">
+                        Have worked on ..
+                    </h3>
+
+                    <div className="grid grid-rows-1 md:grid-cols-3 gap-8">
+                        {past_projects.map((project, index) => (
                         <Card
                             key={index}
                             image={project.image}
