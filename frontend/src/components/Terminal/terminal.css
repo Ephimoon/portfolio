@@ -1,7 +1,7 @@
 .terminal {
   width: 100%;
   flex: 1;
-  min-height: 520px;
+  min-height: clamp(200px, 35vh, 520px);
   font-family: 'Inter', sans-serif;
   border-radius: 24px;
   overflow: hidden;
