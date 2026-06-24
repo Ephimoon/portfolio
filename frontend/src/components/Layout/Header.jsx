@@ -2,9 +2,9 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { usePostHog } from '@posthog/react'
 
 const navItems = [
-  { label: '[ABOUT ME]', command: 'about' },
-  { label: '[MY PROJECTS]', command: 'projects' },
-  { label: '[CONTACT ME]', command: 'contact' }
+  { label: '[ ABOUT ME ]', command: 'about' },
+  { label: '[ MY PROJECTS ]', command: 'projects' },
+  { label: '[ CONTACT ME ]', command: 'contact' }
 ]
 
 const Header = ({ name, onRunCommand }) => {

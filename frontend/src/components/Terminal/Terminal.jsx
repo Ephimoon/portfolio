@@ -98,7 +98,7 @@ const Terminal = forwardRef(({ profile, projects, externalCommand }, ref) => {
 
   const promptContactOptions = useCallback(() => {
     appendLines([
-      line('contact copy\tcopy my email to clipboard', 'normal', 'contact copy'),
+      line('contact copy\tcopy my email melanie@melesco.com to clipboard', 'normal', 'contact copy'),
       line('contact email\topen your email app', 'normal', 'contact email'),
       line('contact form\tsend me a message through the terminal', 'normal', 'contact form')
     ])
