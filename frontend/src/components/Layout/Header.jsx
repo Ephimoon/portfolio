@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { usePostHog } from '@posthog/react'
 
 const navItems = [
   { label: '[ABOUT ME]', command: 'about' },
@@ -7,6 +8,7 @@ const navItems = [
 ]
 
 const Header = ({ name, onRunCommand }) => {
+  const posthog = usePostHog()
   const containerRef = useRef(null)
   const measureCanvasRef = useRef(null)
   const [titleSize, setTitleSize] = useState(null)
@@ -95,7 +97,10 @@ const Header = ({ name, onRunCommand }) => {
             key={item.command}
             className="site-header__button"
             onMouseDown={(e) => e.preventDefault()}
-            onClick={() => onRunCommand(item.command)}
+            onClick={() => {
+              posthog?.capture('nav_button_clicked', { command: item.command })
+              onRunCommand(item.command)
+            }}
           >
             {item.label}
           </button>
