@@ -151,6 +151,10 @@ export function getProjectDetailLines(project, index, total, projects) {
 
   lines.push('', project.description)
 
+  if (project.userFlow) {
+    lines.push('', 'User flow:', { text: project.userFlow, tone: 'muted' })
+  }
+
   if (project.problemSolved) {
     lines.push('', 'Why it matters:', { text: project.problemSolved, tone: 'muted' })
   }

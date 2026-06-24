@@ -1,7 +1,7 @@
 import { links } from './links'
 
 export const profile = {
-  name: 'MELANIE ESCOBAR',
+  name: 'MELANIE  ESCOBAR',
   fullName: 'Melanie Escobar',
   promptUser: 'visitor@melesco.com',
   bio: "I'm a new grad from the University of Houston looking for a full-time software engineering role. I'm interested in full-stack development, cloud, DevOps/CI/CD, and building useful apps with clean user experiences.",

@@ -12,7 +12,7 @@ const Footer = ({ links, copyright }) => {
           href={`mailto:${links.email}`}
           onClick={() => trackOutboundClick(posthog, 'email', 'footer')}
         >
-          {links.email}
+          mailto:{links.email}
         </a>
         <span className="site-footer__sep">•</span>
         <a
