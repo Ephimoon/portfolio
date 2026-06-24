@@ -1,4 +1,13 @@
+import { usePostHog } from '@posthog/react'
+
+import {
+  trackTerminalCommand,
+  trackOutboundClick,
+  trackContactAction
+} from '../../lib/analytics'
+
 import { useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState, forwardRef } from 'react'
+
 import {
   findProject,
   getAboutLines,
@@ -17,6 +26,7 @@ import {
   validateContactMessage,
   validateContactName
 } from './terminalCommands'
+
 import './terminal.css'
 
 const line = (text, tone = 'normal', command = null) => ({ text, tone, command })
@@ -39,6 +49,8 @@ const CONTACT_CANCEL_INPUTS = new Set(['cancel', 'exit', 'quit'])
 const TERMINAL_COMMANDS = new Set(['about', 'skills', 'experience', 'education', 'projects', 'project', 'contact', 'help', 'clear', 'next', 'prev', 'github', 'linkedin'])
 
 const Terminal = forwardRef(({ profile, projects, externalCommand }, ref) => {
+  const posthog = usePostHog()
+
   const basePrompt = `${profile.promptUser} ~`
   const [lines, setLines] = useState(() =>
     getWelcomeLines().map((item) => {
@@ -51,6 +63,7 @@ const Terminal = forwardRef(({ profile, projects, externalCommand }, ref) => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [visitedCmds, setVisitedCmds] = useState(new Set())
   const [contactFlow, setContactFlow] = useState({ step: null, data: {} })
+  const commandCountRef = useRef(0)
   const [contactTrap, setContactTrap] = useState('')
   const [terminalDimensions, setTerminalDimensions] = useState({ width: 0, height: 0 })
 
@@ -141,6 +154,7 @@ const Terminal = forwardRef(({ profile, projects, externalCommand }, ref) => {
 
     try {
       await sendContactMessage({ ...payload, _trap: contactTrap })
+      trackContactAction(posthog, 'form_submitted')
       appendLines([line('Message sent successfully. Thank you!', 'success')])
       resetContactFlow()
     } catch (error) {
@@ -165,6 +179,14 @@ const Terminal = forwardRef(({ profile, projects, externalCommand }, ref) => {
 
     const parsed = parseCommand(commandValue)
 
+    if (echoPrompt && !contactFlow.step) {
+      trackTerminalCommand(posthog, parsed, commandValue)
+      commandCountRef.current += 1
+      if (commandCountRef.current === 5) {
+        posthog?.capture('visitor_engaged', { commands_run: 5 })
+      }
+    }
+
     if (echoPrompt) {
       const isFormStep = contactFlow.step && contactFlow.step !== 'confirm'
       const isControlWord = CONTACT_CANCEL_INPUTS.has(parsed.normalized) || parsed.normalized === 'back'
@@ -176,6 +198,7 @@ const Terminal = forwardRef(({ profile, projects, externalCommand }, ref) => {
       const normalizedValue = parsed.normalized
 
       if (CONTACT_CANCEL_INPUTS.has(normalizedValue)) {
+        trackContactAction(posthog, 'form_cancelled')
         appendLines([line('Contact form cancelled.', 'success')])
         resetContactFlow()
         return
@@ -334,12 +357,14 @@ const Terminal = forwardRef(({ profile, projects, externalCommand }, ref) => {
     }
 
     if (parsed.name === 'github') {
+      trackOutboundClick(posthog, 'github', 'terminal')
       window.open(profile.links.github, '_blank')
       appendLines([line('Opening GitHub...', 'muted')])
       return
     }
 
     if (parsed.name === 'linkedin') {
+      trackOutboundClick(posthog, 'linkedin', 'terminal')
       window.open(profile.links.linkedin, '_blank')
       appendLines([line('Opening LinkedIn...', 'muted')])
       return
@@ -406,6 +431,7 @@ const Terminal = forwardRef(({ profile, projects, externalCommand }, ref) => {
 
       const index = projects.indexOf(project)
       currentProjectIndexRef.current = index
+      posthog?.capture('project_viewed', { project_name: project.name })
 
       appendLines(getProjectDetailLines(project, index, projects.length, projects).map((item) => {
         if (typeof item === 'string') return line(item)
@@ -447,22 +473,27 @@ const Terminal = forwardRef(({ profile, projects, externalCommand }, ref) => {
       }
 
       if (subcommand === 'copy') {
+        trackContactAction(posthog, 'copy_email')
+
         try {
           await navigator.clipboard.writeText(profile.links.email)
           appendLines([line(`Copied ${profile.links.email} to clipboard.`, 'success')])
         } catch {
           appendLines([line(`Email: ${profile.links.email}`, 'hint')])
         }
+
         return
       }
 
       if (subcommand === 'email') {
+        trackContactAction(posthog, 'open_email')
         window.location.href = `mailto:${profile.links.email}`
         appendLines([line('Opening your email app...', 'muted')])
         return
       }
 
       if (subcommand === 'form') {
+        trackContactAction(posthog, 'start_form')
         startContactForm()
         return
       }
@@ -475,7 +506,7 @@ const Terminal = forwardRef(({ profile, projects, externalCommand }, ref) => {
       line(`Command not found: ${parsed.name}`, 'error'),
       line('Try "help" to list available commands.', 'hint')
     ])
-  }, [appendLines, contactFlow.data, contactFlow.editing, contactFlow.step, profile, prompt, projects, promptContactOptions, promptContactReview, resetContactFlow, startContactForm, submitContactMessage, visitedCmds])
+  }, [appendLines, contactFlow.data, contactFlow.editing, contactFlow.step, posthog, profile, prompt, projects, promptContactOptions, promptContactReview, resetContactFlow, startContactForm, submitContactMessage, visitedCmds])
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -726,6 +757,7 @@ const Terminal = forwardRef(({ profile, projects, externalCommand }, ref) => {
               disabled={isSubmitting}
               autoComplete="off"
               spellCheck={false}
+              data-ph-no-capture
             />
           </div>
         </form>
@@ -737,6 +769,7 @@ const Terminal = forwardRef(({ profile, projects, externalCommand }, ref) => {
           onChange={(event) => setContactTrap(event.target.value)}
           className="terminal__honeypot"
           aria-hidden="true"
+          data-ph-no-capture
         />
       </div>
     </section>
