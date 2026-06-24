@@ -1,14 +1,10 @@
-import React, {useEffect} from 'react'
+import Home from './sections/Home'
 
 const Portfolio = () => {
-
   return (
-    <main className="portfolio">
-      <Nav />
-      <Buttons />
-      <Terminal />
-      <Footer />
-    </main>
+    <div className="portfolio-page">
+      <Home />
+    </div>
   )
 }
 
