@@ -27,7 +27,7 @@ export function getHelpLines() {
     '',
     'about\tquick intro and links',
     'projects\tview my portfolio projects',
-    'contact\temail me or send a message',
+    'contact\tcopy email or send message',
     '',
     'help\tshow these commands',
     'clear\tclear the terminal'
