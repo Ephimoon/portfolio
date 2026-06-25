@@ -126,6 +126,10 @@
   padding-top: 0.6em;
 }
 
+.terminal__line--section-gap {
+  padding-top: 2em;
+}
+
 .terminal__command-link {
   appearance: none;
   border: 0;

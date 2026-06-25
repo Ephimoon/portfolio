@@ -191,7 +191,7 @@ const Terminal = forwardRef(({ profile, projects, externalCommand }, ref) => {
       const isFormStep = contactFlow.step && contactFlow.step !== 'confirm'
       const isControlWord = CONTACT_CANCEL_INPUTS.has(parsed.normalized) || parsed.normalized === 'back'
       const echoText = (isFormStep && !isControlWord) ? `${contactFlow.step} > ${commandValue}` : `${prompt} ${commandValue}`
-      appendLines([line(''), line(echoText, 'prompt'), line('')])
+      appendLines([line('', 'section-gap'), line(echoText, 'prompt'), line('')])
     }
 
     if (contactFlow.step) {
@@ -698,7 +698,7 @@ const Terminal = forwardRef(({ profile, projects, externalCommand }, ref) => {
       >
         <div className="terminal__output">
           {lines.map((entry, index) => {
-            const isEmpty = !entry.text && !entry.parts
+            const isEmpty = !entry.text && !entry.parts && entry.tone === 'normal'
             const className = isEmpty
               ? 'terminal__line terminal__line--spacer'
               : `terminal__line terminal__line--${entry.tone}`
